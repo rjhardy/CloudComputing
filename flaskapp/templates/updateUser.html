@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New User {% endblock %}</h1>
+    <form method="post">
+        <label for="firstname">First Name</label>
+        <br>
+        <input type="text" name="firstname" value="{{ request.form['firstname'] }}"></input>
+        <br>
+
+        <label for="lastname">Last Name</label>
+        <br>
+        <input type="text" name="lastname" value="{{ request.form['lastname'] }}"></input>
+        <br>
+
+	<label for="email">Email</label>
+	<br>
+	<input type="text" name="email" value="{{ request.form['email'] }}"></input>
+	<br>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

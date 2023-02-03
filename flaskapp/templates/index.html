@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Welcome to my AWS instance {% endblock %}</h1>        
+<div>
+	<a href="{{ url_for('viewdb') }}"><button>View the database</button></a>           
+	<a href="{{ url_for('createLogin') }}"><button>Register new user</button></a>
+        <a href="{{ url_for('lookupExistingUser') }}"><button>Lookup Existing User</button></a>       
+ </div>
+{% endblock %}
