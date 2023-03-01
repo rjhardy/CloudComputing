@@ -1,12 +1,13 @@
 import csv
 import sqlite3
+import os
 
 from flask import Flask, request, g, render_template, url_for, flash, redirect, json
 from collections import Counter
 
 app = Flask(__name__)
 
-DATABASE = '/var/www/html/flaskapp/users.db'
+DATABASE = os.path.join(app.root_path,'users.db')
 
 app.config.from_object(__name__)
 
@@ -120,5 +121,5 @@ def existingUser():
 
 
 if __name__ == '__main__':
-  app.run()
+  app.run(host="0.0.0.0",port=8080,debug=True)
 
